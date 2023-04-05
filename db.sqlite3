@@ -1,0 +1,11 @@
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'playarbitrage$default',
+        'USER': 'playarbitrage',
+        'PASSWORD': 'Mister321@',
+        'HOST': 'playarbitrage.mysql.pythonanywhere-services.com',
+        'PORT': '3306',
+    }
+}
+
