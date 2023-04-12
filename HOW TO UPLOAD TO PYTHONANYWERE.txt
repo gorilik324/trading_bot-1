@@ -1,0 +1,44 @@
+Sure! Here's a step-by-step process to restore your PythonAnywhere account back to default and then upload a Python package from GitHub using the pip install repository link without adding the ".git" at the end of the repo link:
+
+Step 1: Log in to your PythonAnywhere account at https://www.pythonanywhere.com/ using your credentials.
+
+Step 2: Once logged in, go to the "Web" tab in the PythonAnywhere dashboard and click on the "Go to Directory" button for the web app where you want to restore the default settings.
+
+Step 3: In the directory tree view, locate the files or folders that you want to remove. You can use the "rm" command to remove files or "rm -r" command to remove folders. For example, to remove a file named "myfile.txt", you can use the following command in the console:
+
+bash
+Copy code
+rm myfile.txt
+If you want to remove a folder named "myfolder", you can use the following command:
+
+bash
+Copy code
+rm -r myfolder
+Be careful when using the "rm" command, as it permanently deletes the files or folders without any confirmation.
+
+Step 4: Once you have removed the files or folders, you can reset the settings of your web app to default by clicking on the "Reload" button in the "Web" tab.
+
+Step 5: Next, you can install the "git" package in your PythonAnywhere environment by using the following command in the console:
+
+Copy code
+pip install git
+This will allow you to clone and install packages from GitHub.
+
+Step 6: Now, go to the GitHub repository of the package that you want to install. Click on the "Code" button and copy the repository link without the ".git" at the end.
+
+Step 7: In your PythonAnywhere console, navigate to the directory where you want to install the package and use the following command to clone the repository:
+
+bash
+Copy code
+git clone <repository-link>
+Replace "<repository-link>" with the repository link that you copied from GitHub.
+
+Step 8: Once the repository is cloned, navigate into the cloned directory using the "cd" command. You should now see the package files in the directory.
+
+Step 9: Finally, you can install the package using the "pip install" command with the "-e" option to install it in editable mode, which allows you to make changes to the package locally:
+
+Copy code
+pip install -e .
+The package should now be installed in your PythonAnywhere environment and ready to use.
+
+That's it! You have successfully restored your PythonAnywhere account to default and installed a package from GitHub without adding the ".git" at the end of the repository link. Remember to always be cautious when deleting files or folders and double-check the repository link before cloning from GitHub.

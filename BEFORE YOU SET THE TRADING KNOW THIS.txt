@@ -1,0 +1,15 @@
+Slippage is the difference between the expected price of an order and the price when the order actually executes. The slippage percentage shows how much the price for a specific asset has moved. Due to the volatility of cryptocurrency, the price of an asset can fluctuate often depending on trade volume and activity.
+
+Slippage tolerance is a setting for the amount of price slippage you are willing to accept for a trade. By setting slippage tolerance, you basically setting a minimum amount on how many tokens you will accept, in the event that the price increases or decreases.
+
+Any cryptocurrency that experiences frequent and large upward or downward movement in prices is said to be volatile in nature. Bitcoin — the first cryptocurrency to be created — is considered extremely volatile.
+
+
+What is limit in crypto trading?
+A “LIMIT” order allows you to set your own price to buy or sell. If the market reaches your limit price, your order will be executed. However, if the market does not reach your limit price, your order will not be executed. Recurring Buy.
+
+A stop-loss order is a risk-management tool that automatically sells a security once it reaches a certain price (either a percentage or a dollar amount below the current market price). It is designed to limit losses in case the security's price drops below that price level.
+
+Crypto trading pairs consist of two assets that you can trade for each other on an exchange. A crypto pair combines a cryptocurrency with another cryptocurrency or fiat currency. Examples of crypto-to-crypto pairs are BTC/ETH, LTC/BTC, BTC/USDT, etc., while crypto-fiat combinations include ETH/USD, BTC/GBP, etc.
+
+As such, an “API key” is a unique code or a set of unique codes used by an API to authenticate and authorize the calling user or application. Some codes are used for authentication and some are used for creating cryptographic signatures to prove the legitimacy of a request

@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Trade List</h1>
+<ul>
+  {% for trade in trades %}
+    <li>{{ trade.name }}</li>
+  {% endfor %}
+</ul>
+{% endblock %}

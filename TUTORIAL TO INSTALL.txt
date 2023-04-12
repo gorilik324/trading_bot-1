@@ -1,0 +1,116 @@
+mkvirtualenv --python=/usr/bin/python3.10 trading_bot-virtualenv
+
+To ensure that the code provided is active and functional when deploying your bot on PythonAnywhere, you can follow these steps:
+
+Make sure that you have Django installed on your PythonAnywhere environment. You can install Django using the following command:
+Copy code
+pip install django
+Update the os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'trading_bot.settings') line to match the name of your Django project's settings module. If your Django project's settings module is named differently, update the line accordingly.
+
+Upload your Django project files to your PythonAnywhere account. This can be done using FTP or the PythonAnywhere web console.
+
+Set the correct file permissions for the file containing the code you provided. You can do this through the PythonAnywhere web console or by using the following command in a terminal:
+
+bash
+Copy code
+chmod +x <filename>.py
+Replace <filename> with the name of the file containing the code you provided.
+
+In the PythonAnywhere web console, navigate to the directory where your Django project files are located.
+
+Run the code using the Python interpreter. You can do this by running the following command:
+
+php
+Copy code
+python <filename>.py
+Replace <filename> with the name of the file containing the code you provided.
+
+Your Django project should now be up and running on PythonAnywhere. You can access it through the URL provided by PythonAnywhere.
+Note: Make sure to also configure any necessary settings in your Django project's settings file, such as database configurations, static files, and media files, to ensure that your bot runs correctly on PythonAnywhere.
+
+If your project name is trading_bot on PythonAnywhere, you can create and save the bitmedia_api.py file in the root directory of your project. Here's how you can do it:
+
+Open a new console session on PythonAnywhere.
+
+Make sure you are in the root directory of your project. You can navigate to the root directory using the cd command, like this:
+
+bash
+Copy code
+cd /home/your_username/trading_bot
+Replace your_username with your actual PythonAnywhere username.
+
+Create a new Python file named bitmedia_api.py in the root directory of your project by running the following command:
+bash
+Copy code
+touch bitmedia_api.py
+Open the bitmedia_api.py file for editing by running the following command:
+Copy code
+nano bitmedia_api.py
+Copy and paste the code provided into the bitmedia_api.py file.
+No, the API key and secret key should not be present in the code provided. In the code, there are references to the api_key and secret_key variables, which are expected to be provided as arguments when initializing an object of the BitmediaAPI class. These variables should be passed externally to the class during object instantiation and should not be hard-coded in the code.
+
+To use the BitmediaAPI class, you should create an instance of the class by providing your API key and secret key as arguments, like this:
+
+makefile
+Copy code
+api_key = 'your_api_key'
+secret_key = 'your_secret_key'
+bitmedia_api = BitmediaAPI(api_key, secret_key)
+Make sure to replace 'your_api_key' and 'your_secret_key' with your actual API key and secret key obtained from the Bitmedia API. This way, your API key and secret key will be securely passed to the class as parameters and used for signing requests without being exposed in the code.
+Replace 'your_api_key' and 'your_secret_key' with your actual API key and secret key obtained from the Bitmedia API.
+
+Save the changes and exit Nano by pressing Ctrl+O, followed by Enter, and then Ctrl+X.
+
+Your code is now saved in the bitmedia_api.py file in the root directory of your trading_bot project on PythonAnywhere. You can use this file in your trading bot project to interact with the Bitmedia API.
+
+
+
+
+# Update settings.py to write logs to logger.py file
+with open('settings.py', 'r') as f:
+    lines = f.readlines()
+
+with open('settings.py', 'w') as f:
+    for line in lines:
+        if 'LOGGING' in line:
+            # Update log file path to logger.py file in root directory
+            f.write("LOGGING = {\n")
+            f.write("    'version': 1,\n")
+            f.write("    'disable_existing_loggers': False,\n")
+            f.write("    'handlers': {\n")
+            f.write("        'file': {\n")
+            f.write("            'level': 'DEBUG',\n")
+            f.write("            'class': 'logging.FileHandler',\n")
+            f.write("            'filename': os.path.join(BASE_DIR, 'logger.py'),\n")
+            f.write("        },\n")
+            f.write("    },\n")
+            f.write("    'root': {\n")
+            f.write("        'handlers': ['file'],\n")
+            f.write("        'level': 'DEBUG',\n")
+            f.write("    }\n")
+            f.write("}\n")
+        else:
+            f.write(line)
+
+# Create .env file to save API key
+with open('.env', 'w') as f:
+    # Write API key to .env file
+    f.write('API_KEY=YOUR_API_KEY\n')
+
+# Update template.html to read API key from .env file
+with open('template.html', 'r') as f:
+    lines = f.readlines()
+
+with open('template.html', 'w') as f:
+    for line in lines:
+        if 'api_key' in line:
+            # Update template to read API key from .env file
+            f.write('<script>\n')
+            f.write('    import os\n')
+            f.write('    from dotenv import load_dotenv\n')
+            f.write('    load_dotenv()\n')
+            f.write('    api_key = os.getenv("API_KEY")\n')
+            f.write('</script>\n')
+        else:
+            f.write(line)
+Note: Please replace "YOUR_API_KEY" with your actual API key in the .env file. Also, make sure to install the python-dotenv package if you haven't already, as it is used to load values from the .env file in this implementation. You can install it using pip with the command: pip install python-dotenv.

@@ -1,0 +1,30 @@
+Sure! Here's a detailed step-by-step process to restore your PythonAnywhere account back to default and then upload a repository from GitHub without adding the ".git" extension to the repository link:
+
+Restoring PythonAnywhere Account to Default:
+Step 1: Log in to your PythonAnywhere account at https://www.pythonanywhere.com/.
+Step 2: Go to the Web menu tab.
+Step 3: Under the "Source Code" section, click on the "Delete" button next to the web app you want to restore to default. Confirm the deletion if prompted.
+Step 4: Go to the Files menu tab.
+Step 5: Click on the "Delete" button next to the files and directories you want to remove. Confirm the deletion if prompted.
+Step 6: Go to the Consoles menu tab.
+Step 7: Click on the "New Console" button to open a new console.
+Step 8: In the console, type the following command to remove any installed packages: pip freeze > packages.txt && pip uninstall -y -r packages.txt && rm packages.txt.
+Step 9: Confirm the deletion of packages if prompted.
+Step 10: Type the following command to remove any virtual environments: rmvirtualenv -a.
+Step 11: Close the console.
+
+Uploading from GitHub without ".git" Extension:
+Step 12: Go to the GitHub repository you want to upload to PythonAnywhere.
+Step 13: Click on the "Code" button.
+Step 14: Click on the "Download ZIP" button to download the repository as a ZIP file.
+Step 15: Extract the ZIP file to a directory of your choice.
+Step 16: Go back to your PythonAnywhere account and go to the Files menu tab.
+Step 17: Click on the "Upload a file" button and select the extracted repository directory from your local machine.
+Step 18: Click on the "Upload" button to upload the repository to your PythonAnywhere account.
+Step 19: Go to the Consoles menu tab.
+Step 20: Click on the "New Console" button to open a new console.
+Step 21: In the console, navigate to the directory where you uploaded the repository using the cd command.
+Step 22: Type the following command to install the repository as a package using pip: pip install ..
+Step 23: Close the console.
+
+That's it! Your PythonAnywhere account should now be restored to default, and you have uploaded a repository from GitHub without adding the ".git" extension to the repository link. You can now use the uploaded package in your PythonAnywhere account as needed.

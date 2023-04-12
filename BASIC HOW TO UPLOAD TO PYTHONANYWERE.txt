@@ -1,0 +1,52 @@
+Sure! Here is a step-by-step process to restore your PythonAnywhere account back to default and upload from GitHub using the pip install repository link without adding the ".git" to the repository link:
+
+Step 1: Login to PythonAnywhere
+Go to the PythonAnywhere website (https://www.pythonanywhere.com/) and login to your account using your username and password.
+
+Step 2: Go to Web menu
+Once you are logged in, go to the "Web" menu on the top navigation bar.
+
+Step 3: Select your web app
+If you have multiple web apps, select the web app for which you want to restore the default settings.
+
+Step 4: Stop your web app
+Click on the "Stop" button under the "Web app status" section to stop your web app.
+
+Step 5: Delete files
+Under the "Code" section, click on the "Go to Directory" button to open the file directory for your web app. Delete any files or folders that you want to remove to restore your account to default.
+
+Step 6: Restart your web app
+Once you have deleted the files, go back to the "Web" menu and click on the "Start" button under the "Web app status" section to restart your web app with the default settings.
+
+Step 7: Clone GitHub repository
+To upload a GitHub repository without adding the ".git" to the repository link, you can use the "git clone" command in your PythonAnywhere console. First, go to the directory where you want to clone the repository using the "cd" command. For example:
+
+bash
+Copy code
+cd /home/yourusername/
+Replace "yourusername" with your PythonAnywhere username.
+
+Step 8: Clone the repository
+Next, use the following command to clone the GitHub repository without adding the ".git" to the repository link:
+
+bash
+Copy code
+git clone https://github.com/username/repo
+Replace "username" with your GitHub username and "repo" with the name of the repository you want to clone.
+
+Step 9: Install the repository
+Once the repository is cloned, go to the cloned directory using the "cd" command:
+
+bash
+Copy code
+cd repo
+Replace "repo" with the name of the cloned repository.
+
+Step 10: Install using pip
+Finally, you can use the "pip" command to install the repository as a Python package:
+
+Copy code
+pip install .
+This will install the repository and its dependencies into your PythonAnywhere environment.
+
+That's it! You have successfully restored your PythonAnywhere account to default and uploaded a GitHub repository without adding the ".git" to the repository link.

@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Trading Pair List</h1>
+<ul>
+  {% for pair in pairs %}
+    <li>{{ pair.name }}</li>
+  {% endfor %}
+</ul>
+{% endblock %}
