@@ -1,1 +1,0 @@
-SLACK_WEBHOOK_URL = 'your_slack_webhook_url'
