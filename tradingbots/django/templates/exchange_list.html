@@ -1,0 +1,27 @@
+<!-- exchange_list.html -->
+
+<!-- Add the link to the exchange create page in the main menu or sidebar -->
+<ul class="nav">
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'exchange_create' %}">New Exchange</a>
+    </li>
+    <!-- Add other links for other pages as needed -->
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'trading-pair-list' %}">Trading Pairs</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'market-data_list' %}">Market Data</a>
+    </li>
+</ul>
+
+<!-- Display the list of exchanges -->
+<h1>Exchanges</h1>
+<ul>
+    {% for exchange in exchanges %}
+    <li>{{ exchange.name }} - {{ exchange.api_key }}</li>
+    {% endfor %}
+</ul>
+
+<!-- Add a button or link to trigger the exchange creation process -->
+<!-- Example using a link to the exchange create page -->
+<a href="{% url 'exchange_create' %}" class="btn btn-primary">New Exchange</a>

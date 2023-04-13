@@ -1,0 +1,42 @@
+<!-- trade_create.html -->
+
+<h1>Create Trade</h1>
+
+<!-- Display the form for entering trade details -->
+<form method="post">
+  {% csrf_token %}
+  <label for="trading_pair">Trading Pair:</label>
+  <select name="trading_pair" id="trading_pair">
+    {% for trading_pair in trading_pairs %}
+    <option value="{{ trading_pair.id }}">{{ trading_pair.name }}</option>
+    {% endfor %}
+  </select><br><br>
+  <label for="exchange">Exchange:</label>
+  <select name="exchange" id="exchange">
+    {% for exchange in exchanges %}
+    <option value="{{ exchange.id }}">{{ exchange.name }}</option>
+    {% endfor %}
+  </select><br><br>
+  <label for="trade_type">Trade Type:</label>
+  <select name="trade_type" id="trade_type">
+    <option value="buy">Buy</option>
+    <option value="sell">Sell</option>
+  </select><br><br>
+  <label for="amount">Amount:</label>
+  <input type="number" name="amount" id="amount" step="0.01" min="0" required><br><br>
+  <label for="price">Price:</label>
+  <input type="number" name="price" id="price" step="0.01" min="0" required><br><br>
+  <button type="submit">Submit</button>
+</form>
+<!-- Add JavaScript code here to enhance the functionality of the page -->
+<script>
+    // Add JavaScript code here for additional functionality
+</script>
+Explanation:
+
+The template displays a form for entering trade details, such as trading pair, exchange, trade type, amount, and price.
+It uses for loops to populate the dropdown menus for trading pairs and exchanges with options based on the context variables trading_pairs and exchanges.
+It includes input fields for amount and price, which are set to required and have a minimum value of 0.
+It uses the {% csrf_token %} template tag to include a CSRF token in the form for security.
+It includes a submit button to submit the form data.
+The form has a POST method, indicating that it will submit data to the server for processing.

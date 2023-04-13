@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Arbitrage Result</title>
+</head>
+<body>
+    <h1>Arbitrage Result</h1>
+    {% if result.success %}
+        <p>Market Data:</p>
+        <ul>
+        {% for data in result.market_data %}
+            <li>{{ data.currency }}: {{ data.price }}</li>
+        {% endfor %}
+        </ul>
+        <p>Profit: {{ result.profit }}</p>
+        <p>Timestamp: {{ result.timestamp }}</p>
+    {% else %}
+        <p>Arbitrage failed</p>
+    {% endif %}
+</body>
+</html>

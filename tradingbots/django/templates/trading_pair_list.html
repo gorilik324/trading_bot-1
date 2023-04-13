@@ -1,0 +1,33 @@
+<!-- trading_pair_list.html -->
+
+<!-- Add the link to the arbitrage result page in the main menu or sidebar -->
+<ul class="nav">
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'arbitrage_result' %}">Arbitrage Result</a>
+    </li>
+    <!-- Add other links for other pages as needed -->
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'trade_list' %}">Trades</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'exchange_list' %}">Exchanges</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'market_data_list' %}">Market Data</a>
+    </li>
+</ul>
+
+<!-- Display the list of trading pairs -->
+<h1>Trading Pairs</h1>
+<ul>
+    {% for trading_pair in trading_pairs %}
+    <li>{{ trading_pair.name }}</li>
+    {% endfor %}
+</ul>
+
+<!-- Add a button or link to trigger the arbitrage function -->
+<!-- Example using a form submit button -->
+<form action="{% url 'arbitrage_result' %}" method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-primary">Run Arbitrage</button>
+</form>

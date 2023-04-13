@@ -1,0 +1,12 @@
+<!-- trading_bot/templates/stop_bot.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Stop Bot</h2>
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit">Stop Bot</button>
+  </form>
+  <p>{{ message }}</p> <!-- Added a paragraph to display a message variable -->
+  <p>{{ error }}</p> <!-- Added a paragraph to display an error variable -->
+{% endblock %}

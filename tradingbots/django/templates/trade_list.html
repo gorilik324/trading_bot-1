@@ -1,0 +1,29 @@
+<!-- trade_list.html -->
+
+<!-- Add the link to the trade create page in the main menu or sidebar -->
+<ul class="nav">
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'trade_create' trading_pair_id=trading_pair_id exchange_id=exchange_id %}">New Trade</a>
+    </li>
+    <!-- Add other links for other pages as needed -->
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'exchange_list' %}">Exchanges</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'market_data_list' %}">Market Data</a>
+    </li>
+</ul>
+
+<!-- Display the list of trades for the selected trading pair and exchange -->
+<h1>Trades for {{ trading_pair.name }} on {{ exchange.name }}</h1>
+<ul>
+    {% for trade in trades %}
+    <li>{{ trade.trade_type }}: {{ trade.amount }} {{ trade.pair.quote_currency }} at {{ trade.price }} {{ trade.pair.base_currency }}</li>
+    {% endfor %}
+</ul>
+
+<!-- Add a button or link to trigger the trade creation process -->
+<!-- Example using a link to the trade create page -->
+<a href="{% url 'trade_create' trading_pair_id=trading_pair_id exchange_id=exchange_id %}" class="btn btn-primary">New Trade</a>
+
+It includes a main menu or sidebar with links to other pages such as the exchange list and market data list. It also displays a list of trades for the selected trading pair and exchange using a loop over the trades context variable. Lastly, it includes a link to the trade creation process using the {% url 'trade_create' trading_pair_id=trading_pair_id exchange_id=exchange_id %} template tag, which passes the trading_pair_id and exchange_id as parameters to the trade_create view for creating a new trade. Overall, the template appears to be functional and complete.

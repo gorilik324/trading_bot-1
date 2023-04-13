@@ -1,0 +1,13 @@
+<!-- trading_bot/templates/start_bot.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Start Bot</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Start Bot</button>
+  </form>
+  <p>{{ message }}</p> <!-- Added a paragraph to display a message variable -->
+  <p>{{ error }}</p> <!-- Added a paragraph to display an error variable -->
+{% endblock %}

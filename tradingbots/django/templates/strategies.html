@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Strategies</title>
+    <script>
+        function onSubmitForm() {
+            var selectedStrategy = document.getElementById("strategy").value;
+            document.getElementById("strategy_input").value = selectedStrategy;
+            document.getElementById("strategy-form").submit();
+        }
+    </script>
+</head>
+<body>
+    <h1>Select a Strategy</h1>
+    <form id="strategy-form" method="post" action="{% url 'strategies' %}">
+        {% csrf_token %}
+        <label for="strategy">Strategy:</label>
+        <select id="strategy" name="strategy">
+            <option value="mean_reversion">Mean Reversion</option>
+            <option value="trend_following">Trend Following</option>
+        </select>
+        <br>
+        <input type="hidden" id="strategy_input" name="strategy" value="">
+        <input type="button" value="Execute" onclick="onSubmitForm()">
+    </form>
+</body>
+</html>

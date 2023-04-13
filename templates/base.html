@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PlayBots Arbitrage</title>
+    <!-- Include CSS and JavaScript files here -->
+</head>
+<body>
+    <!-- Include common header, footer, and navigation bar here -->
+    <nav>
+        <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'login' %}">Login</a></li>
+            <li><a href="{% url 'start_bot' %}">Start Bot</a></li>
+            <li><a href="{% url 'stop_bot' %}">Stop Bot</a></li>
+            <!-- Add more links as needed -->
+        </ul>
+    </nav>
+    <main>
+        {% block content %}
+        {% endblock %}
+        <p>{{ message }}</p> <!-- Added a paragraph to display a message variable -->
+        <p>{{ error }}</p> <!-- Added a paragraph to display an error variable -->
+    </main>
+    <!-- Include common JavaScript files here -->
+</body>
+</html>
+
+In this update, I added two new paragraph elements (<p>) at the end of the <main> section to display message and error variables. These variables can be passed from the view functions in the backend to display any success or error messages to the user. You can update your view functions accordingly to pass the message and error variables to the template.

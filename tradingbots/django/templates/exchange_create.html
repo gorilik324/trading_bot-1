@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Exchange</title>
+</head>
+<body>
+    <h1>Create Exchange</h1>
+    <form method="post" action="{% url 'exchange_create' %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="exchange_name">Exchange Name:</label>
+        <input type="text" name="exchange_name" id="exchange_name" required>
+        <br>
+        <label for="exchange_type">Exchange Type:</label>
+        <select name="exchange_type" id="exchange_type" required>
+            <option value="centralized">Centralized</option>
+            <option value="decentralized">Decentralized</option>
+        </select>
+        <br>
+        <label for="location">Location:</label>
+        <input type="text" name="location" id="location" required>
+        <br>
+        <input type="submit" value="Create Exchange">
+    </form>
+    <br>
+    <a href="{% url 'exchange_list' %}">Back to Exchange List</a>
+</body>
+</html>
+In the updated version, we've added the action attribute to the form element, which specifies the URL to which the form data will be submitted. We've also added the method attribute, which specifies the HTTP method to be used for the form submission (in this case, "post" to submit data securely). Additionally, we've added the enctype attribute with the value "multipart/form-data", which is required when uploading files or other binary data. Please note that you may need to adjust the action URL to match the URL pattern configured in your Django application for the exchange_create view.

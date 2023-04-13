@@ -1,0 +1,33 @@
+<!-- exchange_update.html -->
+
+<h1>Update Exchange</h1>
+
+<!-- Display the form for updating exchange details -->
+<form method="post">
+  {% csrf_token %}
+  <label for="name">Name:</label>
+  <input type="text" name="name" id="name" value="{{ exchange.name }}" required><br><br>
+  <label for="country">Country:</label>
+  <input type="text" name="country" id="country" value="{{ exchange.country }}" required><br><br>
+  <label for="website">Website:</label>
+  <input type="url" name="website" id="website" value="{{ exchange.website }}" required><br><br>
+  <label for="has_margin_trading">Has Margin Trading:</label>
+  <input type="checkbox" name="has_margin_trading" id="has_margin_trading" {% if exchange.has_margin_trading %}checked{% endif %}><br><br>
+  <button type="submit">Update</button>
+</form>
+
+<!-- Add JavaScript code here to enhance the functionality of the page -->
+<script>
+// Add event listener to the form submission
+document.querySelector('form').addEventListener('submit', function(event) {
+  // Validate name and country inputs
+  var nameInput = document.getElementById('name');
+  var countryInput = document.getElementById('country');
+  
+  // Check if name and country are not empty
+  if (nameInput.value.trim() === '' || countryInput.value.trim() === '') {
+    event.preventDefault(); // Prevent form submission
+    alert('Name and country are required fields.');
+  }
+});
+</script>

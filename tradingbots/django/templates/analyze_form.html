@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Analyze Form</title>
+</head>
+<body>
+    <!-- Add the link to the arbitrage result page in the main menu or sidebar -->
+    <ul class="nav">
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'arbitrage_result' %}">Arbitrage Result</a>
+        </li>
+        <!-- Add other links for other pages as needed -->
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'trade_list' %}">Trades</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'exchange_list' %}">Exchanges</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'market_data_list' %}">Market Data</a>
+        </li>
+    </ul>
+
+    <!-- Display the form for entering analysis details -->
+    <h1>Analyze Form</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="input_data">Input Data:</label>
+        <textarea name="input_data" id="input_data" rows="10" cols="30" required></textarea><br><br>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <!-- Add JavaScript code here to enhance the functionality of the page -->
+    <script>
+        // Add JavaScript code here for additional functionality
+    </script>
+</body>
+</html>
+This template includes the main menu or sidebar with links to other pages such as 'Arbitrage Result', 'Trades', 'Exchanges', and 'Market Data'. It also includes a form for entering analysis details, with a textarea for input data and a submit button. The {% csrf_token %} template tag is used to include the CSRF token for security. JavaScript code can be added in the <script> tag to enhance the functionality of the page if needed.

@@ -1,0 +1,23 @@
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.pstgresql',
+        'NAME': 'playbotsnow$default',
+        'USER': 'super',
+        'PASSWORD': '@Mistle123',
+        'HOST': 'playbotsnow-3124.postgres.pythonanywhere-services.com',
+        'PORT': '13124',
+    }
+}
+
+
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'myappdb',
+        'USER': 'myappuser',
+        'PASSWORD': 'a-nice-random-password',
+        'HOST': 'myusername-667.postgres.pythonanywhere-services.com',
+        'PORT': 10667,
+    }
+}

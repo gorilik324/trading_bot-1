@@ -1,0 +1,28 @@
+<!-- trading_bot/tradingbots/django/arbitrage.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Arbitrage</title>
+</head>
+<body>
+    <h1>Perform Arbitrage</h1>
+    <form method="post" action="{% url 'arbitrage' %}">
+        {% csrf_token %}
+        <label for="buy_exchange">Buy Exchange:</label>
+        <select name="buy_exchange" id="buy_exchange">
+            {% for exchange in exchanges %}
+            <option value="{{ exchange }}">{{ exchange.name }}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <label for="sell_exchange">Sell Exchange:</label>
+        <select name="sell_exchange" id="sell_exchange">
+            {% for exchange in exchanges %}
+            <option value="{{ exchange }}">{{ exchange.name }}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <input type="submit" value="Perform Arbitrage">
+    </form>
+</body>
+</html>

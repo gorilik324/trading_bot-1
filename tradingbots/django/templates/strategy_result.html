@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Strategy Result</title>
+</head>
+<body>
+    <h1>Strategy Result</h1>
+    <p>Strategy: <span id="strategy">{{ strategy }}</span></p>
+    <p>Result: <span id="result">{{ result }}</span></p>
+    <a href="#" id="backButton">Back</a>
+    <script>
+        var strategy = "{{ strategy }}";
+        var result = "{{ result }}";
+        var backButton = document.getElementById("backButton");
+        var url = "{% url 'strategies' %}?strategy=" + strategy + "&result=" + result;
+        backButton.href = url;
+    </script>
+</body>
+</html>
