@@ -13,8 +13,8 @@ from .analyzers import OrderBookAnalyzer
 from trading_bot.settings import DATABASES
 import threading
 from tradingbots.models import Strategy
-from tradingbots.arbitrage import arbitrage_function
-from tradingbots.analyzers import analyze_function
+from tradingbots.arbitrage import run_arbitrage
+from tradingbots.analyzers import get_order_book
 
 class CustomLoginView(LoginView):
     template_name = 'django/templates/arbitrage.html'
@@ -140,13 +140,13 @@ sell_exchange = request.POST.get('sell_exchange')
         market_data_list.append(result)
 
     # Render the result in a template
-    return render(request, 'arbitrage_result.html', {'result': result})
+    return render(request, 'django/templates/arbitrage_result.html', {'result': result})
 else:
     # Render the initial form view
-    return render(request, 'arbitrage_form.html')
+    return render(request, 'django/templates/arbitrage_form.html')
 	
 	Render the result in the template
-	return render(request, 'arbitrage_result.html', {'result': result})
+	return render(request, 'django/templates/arbitrage_result.html', {'result': result})
 
 class ArbitrageListView(ListView):
 	model = MarketData
@@ -170,10 +170,10 @@ class ArbitrageListView(ListView):
     trades = ['Trade1', 'Trade2', 'Trade3', 'Trade4', 'Trade5']
 
     # Pass trades data to the template as context
-    return render(request, 'analyze.html', {'trades': trades})
+    return render(request, 'django/templates/analyze.html', {'trades': trades})
 else:
     # Render the initial form view
-    return render(request, 'analyze_form.html')
+    return render(request, 'django/templates/analyze_form.html')
 
 class StrategyListView(ListView):
 		model = Strategy
@@ -196,16 +196,16 @@ class StrategyUpdateView(UpdateView):
 		# Call the arbitrage function from the arbitrage module
 		result = arbitrage.arbitrage_function()
 		# Render the result in the template
-		return render(request, 'run_arbitrage.html', {'result': result})
+		return render(request, 'django/templates/run_arbitrage.html', {'result': result})
 		def run_strategy(request):
 		# Call the strategy function from the strategies module
 		result = strategies.strategy_function()
 		# Render the result in the template
-		return render(request, 'run_strategy.html', {'result': result})
-				return render(request, 'result.html', {'result': result})
+		return render(request, 'django/templates/run_strategy.html', {'result': result})
+				return render(request, 'django/templates/result.html', {'result': result})
 else:
     # Render the initial form view
-    return render(request, 'arbitrage_form.html')
+    return render(request, 'django/templates/arbitrage_form.html')
 
 
 def analyze_view(request):
@@ -223,10 +223,10 @@ def analyze_view(request):
         result = analyze_function(market_data)
 
         # Render the result in a template
-        return render(request, 'result.html', {'result': result})
+        return render(request, 'django/templates/result.html', {'result': result})
     else:
         # Render the initial form view
-        return render(request, 'analyze_form.html')
+        return render(request, 'django/templates/analyze_form.html')
 Note: This code assumes that you have appropriate templates ('result.html', 'arbitrage_form.html', 'analyze_form.html') available in your Django templates directory. You may need to customize the templates to match your specific application requirements. Also, please replace the placeholder function calls ('arbitrage_function()', 'analyze_function()') with your actual function calls based on your module and its function names.
 
 Note: Please make sure to import necessary modules and update the paths of template files according to your project's directory structure. Also, replace the function calls arbitrage_function() and strategy_function() with your actual function calls from your modules.
