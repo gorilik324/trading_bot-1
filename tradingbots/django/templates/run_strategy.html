@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Run Strategy</title>
+    <!-- Add any necessary CSS and JavaScript files here -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="{% static 'js/script.js' %}"></script>
+</head>
+<body>
+    <h1>Run Strategy</h1>
+    <form method="post" action="{% url 'run_strategy' %}">
+        {% csrf_token %}
+        <!-- Add any input fields or form elements as needed -->
+        <label for="strategy">Select Strategy:</label>
+        <select id="strategy" name="strategy">
+            <option value="strategy1">Strategy 1</option>
+            <option value="strategy2">Strategy 2</option>
+            <!-- Add more options as needed -->
+        </select>
+        <br>
+        <!-- Add any other form fields or elements as needed -->
+        <input type="submit" value="Run Strategy">
+    </form>
+</body>
+</html>

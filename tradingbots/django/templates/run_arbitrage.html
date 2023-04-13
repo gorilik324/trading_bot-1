@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Run Arbitrage</title>
+    <!-- Add any necessary CSS and JavaScript files here -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="{% static 'js/script.js' %}"></script>
+</head>
+<body>
+    <h1>Run Arbitrage</h1>
+    <form method="post" action="{% url 'run_arbitrage' %}">
+        {% csrf_token %}
+        <!-- Add any input fields or form elements as needed -->
+        <label for="exchange1">Exchange 1:</label>
+        <select id="exchange1" name="exchange1">
+            <option value="exchange1_option1">Exchange 1 Option 1</option>
+            <option value="exchange1_option2">Exchange 1 Option 2</option>
+            <!-- Add more options as needed -->
+        </select>
+        <br>
+        <label for="exchange2">Exchange 2:</label>
+        <select id="exchange2" name="exchange2">
+            <option value="exchange2_option1">Exchange 2 Option 1</option>
+            <option value="exchange2_option2">Exchange 2 Option 2</option>
+            <!-- Add more options as needed -->
+        </select>
+        <br>
+        <!-- Add any other form fields or elements as needed -->
+        <input type="submit" value="Run Arbitrage">
+    </form>
+</body>
+</html>
