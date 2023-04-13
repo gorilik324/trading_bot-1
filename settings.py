@@ -82,7 +82,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'super',
-        'USER': 'playbotsnow',
+        'USER': 'Superuser',
         'PASSWORD': '@Mistle123',
         'HOST': 'playbotsnow-3124.postgres.pythonanywhere-services.com',
         'PORT': '13124',
